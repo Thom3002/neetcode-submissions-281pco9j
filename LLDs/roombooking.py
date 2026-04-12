@@ -15,11 +15,12 @@ class RoomBooking:
 
     def bookMeeting(self, meetingId: str, startTime: int, endTime: int):
 
-        for r_id in self.rooms_ids:
+        for r_id in self.rooms_ids: # O(r * m)
             is_available = True
             r = self.rooms_dict[r_id]
             for meeting in r['meetings']:
                 if startTime <= meeting['endTime'] and meeting['startTime'] <= endTime:
+                    # Se o inicio da nova reuniao for antes do fim da reuniao atual (ex: nova começa 1pm e atual termina 8pm) e o inicio da atual começa antes do fim da nova (ex: nova acaba 5pm e atual começa 3pm) então tem conflito.
                     is_available = False
                     break
 
