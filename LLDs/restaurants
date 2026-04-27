@@ -1,0 +1,37 @@
+"""
+Design a class to manage restaurants in a 2D grid.
+
+Initially, the grid is empty.
+
+Implement the RestaurantGrid class:
+
+- RestaurantGrid(rows: int, cols: int)
+  Initializes an empty grid of size rows x cols.
+
+- addRestaurant(row: int, col: int) -> None
+  Adds a restaurant at (row, col). If one already exists, do nothing.
+
+- hasRestaurant(row: int, col: int) -> bool
+  Returns True if there is a restaurant at (row, col), otherwise False.
+
+- countRestaurants() -> int
+  Returns the total number of restaurants.
+
+- countClusters() -> int
+  Returns the number of connected clusters of restaurants.
+  Two restaurants are connected if they are adjacent horizontally or vertically.
+
+Constraints:
+- 0 <= row < rows
+- 0 <= col < cols
+
+Example:
+grid = RestaurantGrid(3, 3)
+grid.addRestaurant(0, 0)
+grid.addRestaurant(0, 1)
+grid.addRestaurant(2, 2)
+
+grid.hasRestaurant(0, 1)  # True
+grid.countRestaurants()   # 3
+grid.countClusters()      # 2
+"""
